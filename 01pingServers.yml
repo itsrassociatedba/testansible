@@ -1,11 +1,9 @@
 ---
 - hosts: all
-  gather_facts: no
-  remote_user: ansible
   tasks:
-    - name: Test connection
-      ping:
-      remote_user: ansible
-...
-
-
+    - name: Ping All Servers
+      action: ping
+    - debug: msg="Hello"
+- hosts: dev
+  tasks:
+    - debug: msg="Hello Dev"
